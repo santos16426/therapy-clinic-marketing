@@ -1,0 +1,24 @@
+{
+  "name": "sunshine-learning-hub",
+  "version": "2.0.0",
+  "private": true,
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "@react-three/drei": "^9.114.0",
+    "@react-three/fiber": "^8.17.10",
+    "gsap": "^3.12.5",
+    "lenis": "^1.1.14",
+    "motion": "^11.11.17",
+    "next": "14.2.15",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "three": "^0.169.0"
+  }
+}
