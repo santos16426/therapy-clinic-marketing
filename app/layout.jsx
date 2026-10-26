@@ -6,6 +6,9 @@ const body = DM_Sans({ subsets: ["latin"], variable: "--font-body" });
 export const metadata = {
   title: "Sunshine Learning Hub — Help Your Child Shine",
   description: "Play, therapy and learning for every unique little star. Ages 2–10, Angeles City.",
+  icons: {
+    icon: "/logo.svg",
+  },
 };
 export default function RootLayout({ children }) {
   return (

@@ -405,11 +405,10 @@ h2 {
   transform: rotate(3deg);
 }
 .photo {
+  position: relative;
   width: 100%;
   aspect-ratio: 1;
-  display: grid;
-  place-items: end start;
-  padding: 10px;
+  overflow: hidden;
 }
 .photo small {
   font-size: 0.7rem;

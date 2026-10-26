@@ -15,7 +15,7 @@ Convert visitors into inquiries (call / visit). Product name + programs + locati
 | Motion | GSAP + ScrollTrigger, Motion, Lenis |
 | 3D | Three.js via `@react-three/fiber` + `@react-three/drei` |
 | Package manager | npm |
-| Deploy | Railway Dockerfile → production only |
+| Deploy | **Vercel** (production / `main` only) — cutover guide [`../docs/VERCEL.md`](../docs/VERCEL.md); was Railway Dockerfile |
 
 ## Routes
 
@@ -37,11 +37,13 @@ npm start        # after build; or `node server.js` from standalone output
 ## Git & deploy
 
 - Remote: `https://github.com/santos16426/therapy-clinic-marketing.git`
-- **Production only** — no UAT/develop Railway envs for this site (same content everywhere).
-- Default branch: `main`. Railway production watches `main`.
-- Custom domain: `sunshine-learning.com` (+ `www` if attached)
-- Railway project: same Sunshine / `diplomatic-vision` project as API + backoffice; service `clinic-marketing`
-- Guide: [`../docs/GIT-AND-DEPLOY.md`](../docs/GIT-AND-DEPLOY.md)
+- **Production only** — no UAT/dev site (same content everywhere).
+- Default branch: `main` → Vercel Production.
+- Custom domain: `sunshine-learning.com` + `www`
+- **No runtime env secrets** (static marketing page; no API).
+- Host setup: [`../docs/setup/01-vercel-marketing.md`](../docs/setup/01-vercel-marketing.md) · index [`../docs/setup/README.md`](../docs/setup/README.md)
+- Git promote habits: [`../docs/GIT-AND-DEPLOY.md`](../docs/GIT-AND-DEPLOY.md)
+- Note: `next.config.js` has `output: "standalone"` for old Railway Docker — gate/remove for Vercel (see VERCEL.md §3)
 
 ## Constraints
 

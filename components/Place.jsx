@@ -2,11 +2,14 @@
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-
-const Polaroid = ({ cap, cls, speed, bg }) => (
+import Image from "next/image";
+const Polaroid = ({ cap, cls, speed, bg, img }) => (
   <figure className={`polaroid ${cls}`} data-speed={speed}>
-    {/* Swap .photo for <Image src="/your-photo.jpg" fill alt="" /> */}
-    <div className="photo" style={{ background: bg }}><small>your photo here</small></div>
+    <div className="photo" style={{ background: bg }}>
+      {img && (
+        <Image src={img} alt={cap} fill sizes="280px" style={{ objectFit: "cover" }} />
+      )}
+    </div>
     <figcaption className="hand">{cap}</figcaption>
   </figure>
 );
@@ -33,15 +36,15 @@ export default function Place() {
         <h2>A safe place to grow</h2>
         <p>Our hub is meant to feel like a second home. Bright colors, soft corners and patient, expert care, so your child walks in curious and leaves proud.</p>
         <div className="stats">
-          <div><b className="count" data-to="500" data-suffix="+">0</b><span className="hand">happy kids</span></div>
-          <div><b className="count" data-to="15" data-suffix="+">0</b><span className="hand">specialists</span></div>
-          <div><b className="count" data-to="6" data-suffix="">0</b><span className="hand">programs</span></div>
+          <div><b className="count" data-to="80" data-suffix="+">0</b><span className="hand">happy kids</span></div>
+          <div><b className="count" data-to="13" data-suffix="">0</b><span className="hand">specialists</span></div>
+          <div><b className="count" data-to="9" data-suffix="">0</b><span className="hand">programs</span></div>
         </div>
       </div>
       <div className="collage">
-        <Polaroid cap="story time, Tuesdays" cls="a" speed={0.5} bg="linear-gradient(135deg,#F4B63E,#E0654A)" />
-        <Polaroid cap="paint everywhere" cls="b" speed={1.2} bg="linear-gradient(135deg,#6FA3C7,#B796C0)" />
-        <Polaroid cap="a small big win" cls="c" speed={0.8} bg="linear-gradient(135deg,#8DB580,#6FA3C7)" />
+        <Polaroid cap="Activities corner  " cls="b" speed={1.2} bg="linear-gradient(135deg,#6FA3C7,#B796C0)" img="/image2.jpg" />
+        <Polaroid cap="Play time" cls="a" speed={0.5} bg="linear-gradient(135deg,#F4B63E,#E0654A)" img="/image1.jpg" />
+        <Polaroid cap="Reading corner" cls="c" speed={0.8} bg="linear-gradient(135deg,#8DB580,#6FA3C7)" img="/image3.jpg" />
       </div>
     </section>
   );
