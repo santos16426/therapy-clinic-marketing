@@ -9,6 +9,28 @@ export const metadata = {
   icons: {
     icon: "/logo.svg",
   },
+  metadataBase: new URL("https://sunshine-learning.com"),
+  openGraph: {
+    title: "Sunshine Learning Hub — Help Your Child Shine",
+    description: "Play, therapy and learning for every unique little star. Ages 2–10, Angeles City.",
+    url: "https://sunshine-learning.com",
+    siteName: "Sunshine Learning Hub",
+    images: [
+      {
+        url: "/banner.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Sunshine Learning Hub",
+      },
+    ],
+    type: "website",
+    twitter: {
+      card: "summary_large_image",
+      title: "Sunshine Learning Hub — Help Your Child Shine",
+      description: "Play, therapy and learning for every unique little star. Ages 2–10, Angeles City.",
+      images: ["/banner.jpg"],
+    },
+  },
 };
 export default function RootLayout({ children }) {
   return (
